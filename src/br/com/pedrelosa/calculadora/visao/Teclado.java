@@ -1,5 +1,8 @@
 package br.com.pedrelosa.calculadora.visao;
 
+import br.com.pedrelosa.calculadora.modelo.Memoria;
+import br.com.pedrelosa.calculadora.modelo.MemoriaObservador;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -65,7 +68,7 @@ public class Teclado extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() instanceof JButton botaoRecebido){
-			System.out.println(botaoRecebido.getText());
+			Memoria.getInstancia().procecarComando(botaoRecebido.getText());
 		}
 	}
 }
