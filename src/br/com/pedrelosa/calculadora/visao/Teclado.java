@@ -2,8 +2,10 @@ package br.com.pedrelosa.calculadora.visao;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Teclado extends JPanel {
+public class Teclado extends JPanel implements ActionListener {
 	private final Color COR_CINZA_ESCURO = new Color(68,68,68);
 	private final Color COR_CINZA_CLARO = new Color(99,99,99);
 	private final Color COR_LARANJA = new Color(242,163,60);
@@ -52,9 +54,18 @@ public class Teclado extends JPanel {
 	}
 	
 	private void adicionarBotao(String texto, Color cor, GridBagConstraints c, int x, int y) {
+		Botao botao = new Botao(texto, cor);
+		botao.addActionListener(this);
+		
 		c.gridx = x;
 		c.gridy = y;
-		
-		this.add(new Botao(texto, cor), c);
+		this.add(botao, c);
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() instanceof JButton botaoRecebido){
+			System.out.println(botaoRecebido.getText());
+		}
 	}
 }
