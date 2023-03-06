@@ -1,5 +1,7 @@
 package br.com.pedrelosa.calculadora.visao;
 
+import br.com.pedrelosa.calculadora.modelo.Memoria;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,7 +10,7 @@ public class Display extends JPanel {
 	public Display(){
 		setBackground(new Color(46,49,50));
 		
-		label = new JLabel("123,45");
+		label = new JLabel(Memoria.getInstancia().getTextoAtual());
 		label.setForeground(Color.WHITE);
 		label.setFont(new Font("Bahnschrift", Font.PLAIN, 30));
 		
