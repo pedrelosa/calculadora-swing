@@ -43,20 +43,28 @@ public class Memoria {
 			return TipoComando.NUMERO;
 		}catch (NumberFormatException e){
 			
-			if (texto.equals("AC")){
-				return TipoComando.ZERAR;
-			}else if (texto.equals("÷")){
-				return TipoComando.DIVISAO;
-			}else if (texto.equals("*")){
-				return TipoComando.MULTIPLICACAO;
-			}else if (texto.equals("-")){
-				return TipoComando.SUBTRACAO;
-			}else if (texto.equals("+")){
-				return TipoComando.SOMA;
-			}else if (texto.equals("=")){
-				return TipoComando.IGUAL;
-			}else if (texto.equals(",")){
-				return TipoComando.VIRGULA;
+			switch (texto) {
+				case "AC" -> {
+					return TipoComando.ZERAR;
+				}
+				case "÷" -> {
+					return TipoComando.DIVISAO;
+				}
+				case "*" -> {
+					return TipoComando.MULTIPLICACAO;
+				}
+				case "-" -> {
+					return TipoComando.SUBTRACAO;
+				}
+				case "+" -> {
+					return TipoComando.SOMA;
+				}
+				case "=" -> {
+					return TipoComando.IGUAL;
+				}
+				case "," -> {
+					return TipoComando.VIRGULA;
+				}
 			}
 		}
 		
